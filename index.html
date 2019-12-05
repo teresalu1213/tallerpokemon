@@ -9,9 +9,17 @@
 </head>
 
 <body>
-  
-  
-  <script type="text/javascript" src="api.js"></script>
+  <h1>Guess which Pokémon is taller?</h1>
+
+  <script type="text/javascript" src="tallerpokemon.js"></script>
+
+  <div class='pokemons'>
+    <img v-for="pic in pics" v-bind:src="gif.images.fixed_height.url">
+  </div>
+
+  <div ><button class='checkGuess'>Submit my guess</button>
+  </div>
+
 </body>
 
 </html>
