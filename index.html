@@ -1,25 +1,28 @@
 <html>
 
 <head>
-  <title>Tallerpokemon-JS-final</title>
+  <title>Tallerpokemon quiz</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <!-- axios -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Oldenburg&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+
   <h1>Guess which Pokémon is taller?</h1>
 
+
+  <div id="app" class='wrapper'>
+    <!--<img v-for="pic in pics" v-bind:src="gif.images.fixed_height.url">-->
+  </div>
+
+  <div ><button v-on:click='checkResult'>Submit my guess</button>
+  </div>
+  
   <script type="text/javascript" src="tallerpokemon.js"></script>
-
-  <div class='pokemons'>
-    <img v-for="pic in pics" v-bind:src="gif.images.fixed_height.url">
-  </div>
-
-  <div ><button class='checkGuess'>Submit my guess</button>
-  </div>
-
 </body>
 
 </html>
