@@ -17,11 +17,27 @@
 
   <div id="app" class='wrapper'>
     <!--<img v-for="pic in pics" v-bind:src="gif.images.fixed_height.url">-->
+    <div v-on:click="select(p1)" v-bind:class="{selected: p1 == guess}">
+    <img v-bind:src="p1.img">
+    <h3>{{p1.name}}</h3>
   </div>
 
-  <div ><button v-on:click='checkResult'>Submit my guess</button>
+
+    <img v-bind:src="p2.img">
+
+\    <!-- <img v-for="gif in gifs" v-bind:src="gif.images.fixed_height.url"> -->
+
+
+
+    <div>
+      <button v-on:click='checkResult'>Submit my guess</button>
+    </div>
+
+      {{$data}}
   </div>
-  
+
+
+
   <script type="text/javascript" src="tallerpokemon.js"></script>
 </body>
 
