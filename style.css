@@ -29,7 +29,17 @@ button{
   border-radius: .5rem;
 }
 
+/* fixes the stretch issue */
+.card img {
+  width: 100%;
+}
+
 #disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+/* this is the outline that gets applied when it is selected */
+.selected {
+  border: 1px solid blue;
 }

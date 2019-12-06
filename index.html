@@ -1,4 +1,6 @@
 <html>
+   
+   
 
 <head>
   <title>Tallerpokemon quiz</title>
@@ -19,19 +21,20 @@
 
   <div id="app" class='container text-center'>
     <div class="row justify-content-center mt-6">
-      <div class='card col-md-3 col-sm-12' v-on:click="select(p1)" v-bind:class="{selected: p1 == guess}">
+      <div class='card col-md-3 col-sm-12' v-on:click="guess='p1', notGuessed='p2'" v-bind:class="{selected: guess=='p1'}">
         <img v-bind:src="p1.img">
         <h5>{{p1.name}}</h5>
       </div>
 
-      <div class='card col-md-3 col-sm-12' v-on:click='select(p2)' v-bind:class='{selected: p2==guess}'>
+      <div class='card col-md-3 col-sm-12' v-on:click="guess='p2', notGuessed='p1'"v-bind:class="{selected: guess=='p2'}">
         <img v-bind:src="p2.img">
         <h5>{{p2.name}}</h5>
       </div>
 
 
       <div class='col-lg-12 my-4'>
-        <button class='mx-auto' v-on:click='checkResult'>Submit my guess</button>
+        <!-- using v-if to only show the button once a guess has been made -->
+        <button v-if="guess" class='mx-auto' v-on:click='checkResult'>Submit my guess</button>
       </div>
     </div>
       {{$data}}
