@@ -3,6 +3,9 @@ body{
   font-family: 'Oldenburg',cursive;
 }
 
+.container{
+
+}
 button{
   font-family: 'Oldenburg',cursive;
   color:#3661AB;
@@ -14,6 +17,15 @@ button{
   height: 63px;
   width: 280px;
 
+}
+
+.card{
+  background-color: #EEF4FF;
+  margin: 15px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left:30px;
+  padding-right: 30px;
 }
 
 #disabled {
