@@ -47,7 +47,10 @@ console.log('getting');
       console.log('methods running')
       debugger;
       //compare input with result;
-      
+      if(this.guess == p1){
+        //compare p1 height to p2 height
+
+      }
       //show true or false messages;
 
       //show 'start new game' button;
