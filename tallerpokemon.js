@@ -8,6 +8,7 @@ var vue = new Vue({
     p1: {},
     p2: {},
     guess: null,
+    refreshGame: false,
 
   },
   methods:{
@@ -66,6 +67,7 @@ console.log('getting pokemons');
         if (this.p1.height > this.p2.height){
           console.log('You guessed right!');
           this.msg = 'You guessed right!';
+          this.refreshGame = true;
 
         } else {
           console.log('Guess again!')
@@ -79,6 +81,7 @@ console.log('getting pokemons');
           if (this.p1.height < this.p2.height) {
             console.log('You guessed right!');
             this.msg = 'You guessed right!';
+            this.refreshGame = true;
           } else{
             console.log('Guess again!');
             this.msg = 'Guess again!';
@@ -88,6 +91,10 @@ console.log('getting pokemons');
 
       //show 'start new game' button;
     },
+
+    reloadGame: function(){
+    window.location.reload();
+}
   },
   mounted: function(){
     console.log('mounted');
