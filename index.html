@@ -25,7 +25,7 @@
         <h5>{{p1.name}}</h5>
       </div>
 
-      <div class='card col-md-3 col-sm-12' v-on:click='select(p2)' v-bind:class='{selected: p2==guess}'>
+      <div class='card col-md-3 col-sm-12' v-on:click='select(p2)' v-bind:class='{selected: p2 == guess}'>
         <img class="mx-auto" v-bind:src="p2.img">
         <h5>{{p2.name}}</h5>
       </div>
@@ -36,7 +36,7 @@
       </div>
     </div>
 
-    {{$data}}
+    <pre class="text-left">{{$data}}</pre>
   </div>
 
 

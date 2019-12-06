@@ -10,7 +10,7 @@ var vue = new Vue({
   },
   methods:{
     showPokemon: function(){
-console.log('getting');
+console.log('getting pokemons');
       var url1 = 'https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random()*100)//need random index number
       var url2 = 'https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random()*100)//need random index number
 
@@ -40,22 +40,39 @@ console.log('getting');
                 caller.p2.height = two.data.height;
                 caller.p2.img = two.data.sprites.front_default;
 
-        caller.msg = "success"
+        caller.msg = "got pokemon names and heights"
       }));
     },
 
     select: function(guess){
       this.guess = guess;
+      console.log('selection made')
       // guess.selected = true;
     },
 
     checkResult: function(){
-      console.log('methods running')
-      debugger;
+      console.log('check result');
       //compare input with result;
-      if(this.guess == p1){
+      //special cases:
+      //  1)the two random numbers are the same->same pokemon p1.name=p2.name
+      //  2)the two pokemons have the same height p1.height=p2.height
+      if(this.guess == this.p1){
         //compare p1 height to p2 height
+        console.log('p1 selected');
 
+        if (this.p1.height > this.p2.height){
+          console.log('you guessed right!')
+        } else {
+          console.log('Guess again!')
+        }
+
+      } else if(this.guess == this.p2){
+          console.log('p2 selected');
+          if (this.p1.height < this.p2.height) {
+            console.log('You guessed right!')
+          } else{
+            console.log('Guess again!')
+          }
       }
       //show true or false messages;
 
