@@ -34,11 +34,16 @@ button{
   border-radius: .5rem;
 }
 
+.card img{
+  width:170px;
+  height:auto;
+}
 .selected{
   border-style: outset;
-  border: 5px solid #3661AB;
+  border: 5px solid #5894FC;
   box-shadow: 5px 5px 20px rgba(138, 181, 255, .9);
 }
+
 #disabled {
   opacity: 0.6;
   cursor: not-allowed;

@@ -21,12 +21,12 @@
 
     <div class="row justify-content-center mt-6">
       <div class='card col-md-3 col-sm-12' v-on:click="select(p1)" v-bind:class="{selected: p1 == guess}">
-        <img v-bind:src="p1.img">
+        <img class="mx-auto" v-bind:src="p1.img">
         <h5>{{p1.name}}</h5>
       </div>
 
       <div class='card col-md-3 col-sm-12' v-on:click='select(p2)' v-bind:class='{selected: p2==guess}'>
-        <img v-bind:src="p2.img">
+        <img class="mx-auto" v-bind:src="p2.img">
         <h5>{{p2.name}}</h5>
       </div>
 

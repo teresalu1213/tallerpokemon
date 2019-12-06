@@ -43,6 +43,12 @@ console.log('getting');
         caller.msg = "success"
       }));
     },
+
+    select: function(guess){
+      this.guess = guess;
+      // guess.selected = true;
+    },
+
     checkResult: function(){
       console.log('methods running')
       debugger;
@@ -55,10 +61,6 @@ console.log('getting');
 
       //show 'start new game' button;
     },
-    select: function(guess){
-      this.guess = guess;
-      // guess.selected = true;
-    }
   },
   mounted: function(){
     console.log('mounted');
