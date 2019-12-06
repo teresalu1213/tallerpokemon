@@ -4,9 +4,11 @@ var vue = new Vue({
   data: {
     pokemons:[],
     msg: "hello",
+    showMessage: false,
     p1: {},
     p2: {},
-    guess: null
+    guess: null,
+
   },
   methods:{
     showPokemon: function(){
@@ -28,7 +30,7 @@ console.log('getting pokemons');
       //
       //
       // })
-      axios.all([
+      axios.all([ //axios get multiple items
         axios.get(url1),
         axios.get(url2),
       ]).then(axios.spread((one, two) => {
@@ -47,6 +49,7 @@ console.log('getting pokemons');
     select: function(guess){
       this.guess = guess;
       console.log('selection made')
+      this.showMessage = false;
       // guess.selected = true;
     },
 
@@ -59,19 +62,26 @@ console.log('getting pokemons');
       if(this.guess == this.p1){
         //compare p1 height to p2 height
         console.log('p1 selected');
-
+        this.showMessage = true;
         if (this.p1.height > this.p2.height){
-          console.log('you guessed right!')
+          console.log('You guessed right!');
+          this.msg = 'You guessed right!';
+
         } else {
           console.log('Guess again!')
+          this.msg = 'Guess again!';
         }
 
       } else if(this.guess == this.p2){
+
           console.log('p2 selected');
+          this.showMessage = true;
           if (this.p1.height < this.p2.height) {
-            console.log('You guessed right!')
+            console.log('You guessed right!');
+            this.msg = 'You guessed right!';
           } else{
-            console.log('Guess again!')
+            console.log('Guess again!');
+            this.msg = 'Guess again!';
           }
       }
       //show true or false messages;

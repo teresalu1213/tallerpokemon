@@ -44,6 +44,11 @@ button{
   box-shadow: 5px 5px 20px rgba(138, 181, 255, .9);
 }
 
+h2{
+  color:#E76A67;
+  text-shadow: 0 0 5px #FFCA1C;
+}
+
 #disabled {
   opacity: 0.6;
   cursor: not-allowed;
