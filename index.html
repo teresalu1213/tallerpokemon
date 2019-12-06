@@ -4,20 +4,21 @@
   <title>Tallerpokemon quiz</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!--vue-->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <!-- axios -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
   <link href="https://fonts.googleapis.com/css?family=Oldenburg&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <link rel="stylesheet" type="text/css" href="style.css"> <!--putting custom css before the end of head will make sure fonts are replaced-->
 </head>
 
 <body>
-
-
-  <h1 class='text-center my-4'>Guess which Pokémon is taller?</h1>
-
+  <h1 class='text-center py-4'>Guess which Pokémon is taller?</h1>
 
   <div id="app" class='container text-center'>
+
     <div class="row justify-content-center mt-6">
       <div class='card col-md-3 col-sm-12' v-on:click="select(p1)" v-bind:class="{selected: p1 == guess}">
         <img v-bind:src="p1.img">
@@ -34,7 +35,8 @@
         <button class='mx-auto' v-on:click='checkResult'>Submit my guess</button>
       </div>
     </div>
-      {{$data}}
+
+    {{$data}}
   </div>
 
 
