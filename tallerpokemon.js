@@ -13,7 +13,7 @@ var vue = new Vue({
   },
   methods:{
     showPokemon: function(){
-console.log('getting pokemons');
+      //console.log('getting pokemons');
       var url1 = 'https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random()*100)//need random index number
       var url2 = 'https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random()*100)//need random index number
 
@@ -36,54 +36,61 @@ console.log('getting pokemons');
         axios.get(url2),
       ]).then(axios.spread((one, two) => {
         caller.p1.name = one.data.name;
-            caller.p1.height = one.data.height;
-            caller.p1.img = one.data.sprites.front_default;
+        caller.p1.height = one.data.height;
+        caller.p1.img = one.data.sprites.front_default;
 
-            caller.p2.name = two.data.name;
-                caller.p2.height = two.data.height;
-                caller.p2.img = two.data.sprites.front_default;
+        caller.p2.name = two.data.name;
+        caller.p2.height = two.data.height;
+        caller.p2.img = two.data.sprites.front_default;
+
+        if (caller.p1.height === caller.p2.height){
+          console.log('same height');
+          //this.showPokemon;
+          window.location.reload();
+        }
 
         caller.msg = "got pokemon names and heights"
       }));
+
     },
 
     select: function(guess){
       this.guess = guess;
-      console.log('selection made')
+      //console.log('selection made')
       this.showMessage = false;
       // guess.selected = true;
     },
 
     checkResult: function(){
-      console.log('check result');
+      //console.log('check result');
       //compare input with result;
       //special cases:
       //  1)the two random numbers are the same->same pokemon p1.name=p2.name
       //  2)the two pokemons have the same height p1.height=p2.height
       if(this.guess == this.p1){
         //compare p1 height to p2 height
-        console.log('p1 selected');
+        //console.log('p1 selected');
         this.showMessage = true;
         if (this.p1.height > this.p2.height){
-          console.log('You guessed right!');
+          //console.log('You guessed right!');
           this.msg = 'You guessed right!';
           this.refreshGame = true;
 
         } else {
-          console.log('Guess again!')
+          //console.log('Guess again!')
           this.msg = 'Guess again!';
         }
 
       } else if(this.guess == this.p2){
 
-          console.log('p2 selected');
+          //console.log('p2 selected');
           this.showMessage = true;
           if (this.p1.height < this.p2.height) {
-            console.log('You guessed right!');
+            //console.log('You guessed right!');
             this.msg = 'You guessed right!';
             this.refreshGame = true;
           } else{
-            console.log('Guess again!');
+            //console.log('Guess again!');
             this.msg = 'Guess again!';
           }
       }

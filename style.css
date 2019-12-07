@@ -35,8 +35,7 @@ button{
 }
 
 .card img{
-  width:170px;
-  height:auto;
+  width:100%;
 }
 .selected{
   border-style: outset;
